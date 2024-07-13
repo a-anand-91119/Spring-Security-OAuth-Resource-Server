@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: spring-security-oauth-resource-server
+jwt:
+  key: "16IvX6d1Nd-QN-inxC2KmgYpOaXt45T67dZe0mM52VN_N0nABWIr-55frPRxXVdAF2AwY4LIzVr1UqOyZreF8A"
+server:
+  port: 8081
+logging:
+  level:
+    org:
+      springframework:
+        security: TRACE

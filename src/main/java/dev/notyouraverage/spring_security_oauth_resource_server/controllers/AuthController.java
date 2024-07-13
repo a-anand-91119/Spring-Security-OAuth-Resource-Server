@@ -1,0 +1,24 @@
+package dev.notyouraverage.spring_security_oauth_resource_server.controllers;
+
+import dev.notyouraverage.spring_security_oauth_resource_server.services.TokenService;
+import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api/v1/auth")
+public class AuthController {
+
+    private final TokenService tokenService;
+
+    public AuthController(TokenService tokenService) {
+        this.tokenService = tokenService;
+    }
+
+    @PostMapping("/token")
+    public String createToken(Authentication authentication) {
+        return tokenService.generateToken(authentication);
+    }
+
+}
